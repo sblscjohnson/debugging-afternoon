@@ -26,10 +26,10 @@ export default function reducer(state=initialState, action) {
 
         case REMOVE_FROM_SHOPPING_CART:
             let newArray = state.shoppingCart.slice();
-            newArray.splice(action.index, 1);
-            return Object.assign({}, {shoppingCart: newArray});
+            let yeet = newArray.splice(action.payload.index, 1);
+            return Object.assign({}, state, {shoppingCart: yeet});
             
-        defualt:
+        default:
             return state;
     }
 }

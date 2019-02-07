@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './ShoppingCart.css';
-import { removeFromShoppingCart } from '../../redux/reducer';
 import { connect } from 'react-redux';
+import { removeFromShoppingCart } from '../../redux/reducer';
 
 class ShoppingCart extends Component {
-
+    
     render() {
+    
         let shoppingCartDisplay = this.props.shoppingCart.map((element, index) => {
             return (
                 <div className="shopping-cart-product-container" key={index}>
@@ -14,7 +15,7 @@ class ShoppingCart extends Component {
                         <h2>{element.title}</h2>
                         <h2>{"$" + element.price + ".00"}</h2>
                         <div className="shopping-cart-button-container">
-                            <button className="shopping-cart-button" onClick={() => this.props.removeFromShoppingCart(index)}>Remove From Shopping Cart</button>
+                            <button className="shopping-cart-button" onClick={() => removeFromShoppingCart(index)}>Remove From Shopping Cart</button>
                         </div>
                     </div>
                 </div>
